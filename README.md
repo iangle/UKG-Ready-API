@@ -6,13 +6,19 @@ This program connects to the UKG Ready API and allows for the pushing or pulling
 You can find the documentation for the API here: https://secure.saashr.com/ta/docs/rest/public/
 
 # Setting up the Program
+
+## Installing Python
+If you already have python installed then move onto the next step. If you don't have python installed, then open up a command line window and type in "python". This will bring up a Microsoft store window where you can download and install Python. Once you have Python installed move onto the next step. You can double check that Python is installed by typing the following into a terminal window.
+
+    python --help
+
 ## Cloning from Github
 
-The first thing  you will need to do is clone the repository from github. To do this, I recommend using the gitbash terminal that you can download from here: https://git-scm.com/download/win. Choose your operating system and follow the instructions to download the app. Once it is installed, restart your computer and move onto the next step. Create an empty folder and name it, then right click file inside the folder and choose "gitbash here". Go to the git repositiory and click the **Clone** button. Go back to the terminal that you opened and type in: 
+The first thing  you will need to do is clone the repository from github. To do this, I recommend using the gitbash terminal that you can download from here: https://git-scm.com/download/win. Choose your operating system and follow the instructions to download the app. Once it is installed, create an empty folder and name it, then right click file inside the folder and choose "gitbash here". Go to the git repositiory and click the **Code** button and copy the URL that it gives you. Go back to the terminal that you opened and type in: 
 
-    git clone "right click and select paste"
+    git clone "right click and select paste to paste the URL you just copied here"
 
-click enter to run the code. Now the code is populated into the empty folder. Go to the folder containing the main.py folder before continuing.
+hit enter to run the code. Let the script run, it might take a few minutes. Now the code is populated into the empty folder. Go to the folder containing the main.py folder before continuing.
 
 ## The .env file
 There is a .env file that I use which contains the API key, the username, the password, and the company short name. (you can find the company shortname in the url when you are signed into UKG Ready. It is a 7 digit number) You can put the values directly into the code if you want, but I don't reccomend it. The way I have it setup now, Github will ignore the .env file so none of the passwords or keys are posted. If you want to create your own .env file, then (on Windows) create a text file in the same folder as the python script. Rename it to key.env (or anything.env). Open up the file in a text editor and enter values in the following format:
