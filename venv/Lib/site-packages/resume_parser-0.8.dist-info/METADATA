@@ -1,0 +1,135 @@
+Metadata-Version: 2.1
+Name: resume-parser
+Version: 0.8
+Summary: A resume parser used for extracting information from resumes
+Home-page: https://github.com/kbrajwani/resume_parser
+Author: kumar
+Author-email: kumarrajwani1811@gmail.com
+License: MIT
+Keywords: resume,parser,cv
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: docx2txt (>=0.8)
+Requires-Dist: nltk (>=3.5)
+Requires-Dist: numpy (>=1.19.1)
+Requires-Dist: pandas (>=1.1.0)
+Requires-Dist: pdfminer.six (>=20200517)
+Requires-Dist: pdfplumber (>=0.5.23)
+Requires-Dist: phonenumbers (>=8.12.7)
+Requires-Dist: spacy (>=2.3.2)
+Requires-Dist: stemming (>=1.0.1)
+Requires-Dist: tika (>=1.24)
+
+Resume parser
+=============
+
+::
+
+    A resume parser used for extracting information from resumes
+
+Built with ❤︎ and :coffee: by `Kumar
+Rajwani <https://github.com/kbrajwani>`__ and `Brian
+Njoroge <https://github.com/Brianjoroge>`__
+
+--------------
+
+Features
+========
+
+-  Extract name
+-  Extract email
+-  Extract mobile numbers
+-  Extract skills
+-  Extract total experience
+-  Extract college name
+-  Extract degree
+-  Extract designation
+-  Extract company names
+
+Installation
+============
+
+-  You can install this package using
+
+.. code:: bash
+
+    pip install resume-parser
+
+-  For NLP operations we use spacy and nltk. Install them using below
+   commands:
+
+.. code:: bash
+
+    # spaCy
+    python -m spacy download en_core_web_sm
+
+    # nltk
+    python -m nltk.downloader stopwords
+    python -m nltk.downloader punkt
+    python -m nltk.downloader averaged_perceptron_tagger
+    python -m nltk.downloader universal_tagset
+    python -m nltk.downloader wordnet
+    python -m nltk.downloader brown
+    python -m nltk.downloader maxent_ne_chunker
+
+Supported File Formats
+======================
+
+-  PDF and DOCx and TXT files are supported on all Operating Systems
+
+Usage
+=====
+
+-  Import it in your Python project
+
+.. code:: python
+
+    from resume_parser import resumeparse
+
+    data = resumeparse.read_file('/path/to/resume/file')
+
+Result
+======
+
+The module would return a dictionary with result as follows:
+
+::
+
+    {'degree': ['BSc','MSc'],
+         'designition': [
+             'content writer',
+             'data scientist',
+             'systems administrator',
+         ],
+         'email': 'maunarokguy@gmail.com',
+         'name': 'Brian Njoroge',
+         'phone': '+918511593595',
+         'skills': [
+             'Python',
+             ' C++',
+             'Power BI',
+             'Tensorflow',
+             'Keras',
+             'Pytorch',
+             'Scikit-Learn',
+             'Pandas',
+             'NLTK',
+             'OpenCv',
+             'Numpy',
+             'Matplotlib',
+             'Seaborn',
+             'Django',
+             'Linux',
+             'Docker'],
+         'total_exp': 3,
+         'university': ['gujarat university', 'wuhan university', 'egerton university']}
+
+
+

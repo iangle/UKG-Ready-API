@@ -1,0 +1,35 @@
+# this function gets the resume link from a given applicant
+# it returns this link from the json payload it receives
+def getApplicantResumeLink(token, short_name):
+    my_headers = {'Authentication': 'Bearer ' + token, 'Content-Type': 'application/json'}
+
+    response = requests.get('https://secure3.saashr.com/ta/rest/v2/companies/!' + short_name + '/applicants/12987531630',
+                            headers=my_headers)
+
+    print(response.status_code)
+
+    print(response.json())
+
+    json_data = response.json() if response and response.status_code == 200 else print(
+        "the status code for the resume link was not 200")
+
+    if json_data and '_links' in json_data:
+        if 'resume' in json_data['_links']:
+            return json_data['_links'].get('resume')
+
+
+# this function gets the information about the resume that can be used to get the resume itself
+# it returns a link to the resume
+def getApplicantResume(token, link):
+    my_headers = {'Authentication': 'Bearer ' + token}
+
+    response = requests.get(link, headers=my_headers)
+
+    json_data = response.json() if response and response.status_code == 200 else print("the status code for the "
+                                                                                       "resume information was not "
+                                                                                       "200")
+
+    if json_data and '_links' in json_data:
+        if 'content_rw' in json_data['_links']:
+            return json_data['_links'].get('content_rw')
+
