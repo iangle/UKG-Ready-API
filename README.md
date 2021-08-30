@@ -8,9 +8,11 @@ You can find the documentation for the API here: https://secure.saashr.com/ta/do
 # Setting up the Program
 
 ## Installing Python
-If you already have python installed then move onto the next step. If you don't have python installed, then open up a command line window and type in "python". This will bring up a Microsoft store window where you can download and install Python. Once you have Python installed move onto the next step. You can double check that Python is installed by typing the following into a terminal window.
+If you already have python installed then move onto the next step. If you don't have python installed, then open up a command line window and type in "python". This will bring up a Microsoft store window where you can download and install Python. You can also go to: https://www.python.org/downloads/ to download python, just click on the latest version and follow the instructions to download and install it. You can double check that Python is installed by typing the following into a terminal window.
 
     python --help
+
+If you see a long list of help items then you have python installed correctly. Once you have Python installed move onto the next step. 
 
 ## Cloning from Github
 
