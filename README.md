@@ -54,3 +54,47 @@ If you are using python3 then type in:
 
     python3 main.py
 
+# Adding new API Calls
+
+### Create a Function
+If you want to add a new API call to the program I suggest you create a function below the ones I have already created and above the "main" function. I have included an example function in psuedo code below:
+
+    def FunctionName(parameters go in here):
+        headers
+        payload
+        send http request
+        get response
+        return reponse
+
+### Add Headers
+There are a few headers that you need for almost every API call. These include the API token that was obtained when the program logged into the API and the content type. I have included what these should look like below
+
+Token:
+
+    'Authentication': 'Bearer ' + token
+
+Content Type:
+    
+    'Content-Type': 'application/json'
+
+
+### Add a Payload if Needed
+If you are sending data to the API then you will need to have a payload attached to the request you send. This should be in JSON or XML format, make sure to update the content type with whatever type you choose to use. I have included some example JSON payload contents below:
+
+    { 'name': {
+        'a name': 'Mark'
+    },
+    }
+
+If you get lost you can lookup specific JSON format on Google to help you understand how to best setup your JSON payload.
+
+### Send HTTP Request
+First, take a look at the API documentation and decided which API call you would like to make. Then replace the URL below with the onw you want to use for the API call. Make sure to add the short name back in as well as the exclamation mark before it, otherwise it won't work.
+
+    response = requests.post(
+        'https://secure.saashr.com/ta/rest/v2/companies/!' + short_name + '/config/cost-centers/collection',
+        headers=my_headers,
+        json=payload)
+
+### Return the Response
+Now the response should be stored in a variable so you only need to return it and use it. Congratulations on making your first API call!

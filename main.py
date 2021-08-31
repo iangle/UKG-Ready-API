@@ -66,7 +66,6 @@ def get_cost_centers(short_name, token):
 # it requires the company short name, the token from logging into the API,
 # the length of the content being sent and the name of the cost center we are adding a branch to
 def post_cost_center_names(short_name, token, content_length, name):
-
     # the header being sent to the API
     my_headers = {'Authentication': 'Bearer ' + token, 'Content-Type': 'application/json',
                   'Content-Length': content_length}
@@ -93,17 +92,21 @@ def post_cost_center_names(short_name, token, content_length, name):
     print(response.json())
 
 
-# loads the .env file into the program
-load_dotenv('key.env')
+def main():
+    # loads the .env file into the program
+    load_dotenv('key.env')
 
-# all of these environment variables are loaded from the .env file
-API_KEY = os.environ.get('PROJECT_API_KEY')
-USERNAME = os.environ.get('USER')
-PASSWORD = os.environ.get('PASSWORD')
-SHORT_NAME = os.environ.get('SHORT_NAME')
+    # all of these environment variables are loaded from the .env file
+    API_KEY = os.environ.get('PROJECT_API_KEY')
+    USERNAME = os.environ.get('USER')
+    PASSWORD = os.environ.get('PASSWORD')
+    SHORT_NAME = os.environ.get('SHORT_NAME')
 
-# store the token that we get by logging into the API
-TOKEN = login_api(API_KEY, USERNAME, PASSWORD, SHORT_NAME)
+    # store the token that we get by logging into the API
+    TOKEN = login_api(API_KEY, USERNAME, PASSWORD, SHORT_NAME)
 
-# collect the cost center names into a variable called "data"
-data = get_cost_centers(SHORT_NAME, TOKEN)
+    # collect the cost center names into a variable called "data"
+    data = get_cost_centers(SHORT_NAME, TOKEN)
+
+
+main()
